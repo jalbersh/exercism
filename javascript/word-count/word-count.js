@@ -1,3 +1,6 @@
+// given a phrase can count the occurrences
+// of each word in that phrase.
+
 var Words = function () {}
 
 Words.prototype.count = function(input) {

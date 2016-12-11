@@ -1,17 +1,17 @@
-# Word Count
+# Isogram
 
-Write a program that given a phrase can count the occurrences
-of each word in that phrase.
+Determine if a word or phrase is an isogram.
 
-For example for the input `"olly olly in come free"`
+An isogram (also known as a "nonpattern word") is a word or
+phrase without a repeating letter.
 
-```plain
-olly: 2
-in: 1
-come: 1
-free: 1
-```
+Examples of isograms:
 
+- lumberjacks
+- background
+- downstream
+
+The word *isograms*, however, is not an isogram, because the s repeats.
 
 ## Setup
 
@@ -33,7 +33,7 @@ changing `xit` to `it`.
 
 ## Source
 
-This is a classic toy problem, but we were reminded of it by seeing it in the Go Tour.
+Wikipedia [https://en.wikipedia.org/wiki/Isogram](https://en.wikipedia.org/wiki/Isogram)
 
 ## Submitting Incomplete Problems
 It's possible to submit an incomplete solution so you can see how others have completed the exercise.
