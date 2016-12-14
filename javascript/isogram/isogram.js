@@ -27,4 +27,4 @@ Isogram.prototype.isIsogram = function() {
     return true;
 };
 
-module.exports = Isogram
+module.exports = Isogram;
