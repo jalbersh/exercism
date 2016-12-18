@@ -1,31 +1,38 @@
-var Robot = function() {
-    this.name = this.getName()
-}
+"use strict";
 
-Robot.prototype.reset = function() {
-	this.name = this.getName();
-};
+(function () {
+    "use strict";
 
-var usedNames = new Set();
+    var usedNames = new Set();
 
-var rand = function(max, min) {
-	return Math.floor(Math.random() * (max - min + 1) + min)
-};
+    function rand(max, min) {
+        return Math.floor(Math.random() * (max - min + 1) + min);
+    }
 
-var letter = function() {
-	return rand('Z'.charCodeAt(0), 'A'.charCodeAt(0))
-};
+    function letter() {
+        return rand(90, 65); // Z - A
+    }
 
-var digit = function() {
-    return rand('9'.charCodeAt(0), '0'.charCodeAt(0))
-};
+    function digit() {
+        return rand(57, 48); // 9 - 0
+    }
 
-Robot.prototype.getName = function() {
-	do {
-		var name = String.fromCharCode(letter(), letter(), digit(), digit(), digit());
-	} while( usedNames.has(name) );
-	usedNames.add(name);
-	return name;
-}
+    function Robot() {
+        this.name = this.getName();
+    };
 
-module.exports = Robot;
+    Robot.prototype.getName = function () {
+        do {
+            var newName = String.fromCharCode(letter(), letter(), digit(), digit(), digit());
+        } while (usedNames.has(newName));
+        usedNames.add(newName);
+        return newName;
+    };
+
+    Robot.prototype.reset = function () {
+        this.name = this.getName();
+    };
+
+    module.exports = Robot;
+})();
+
