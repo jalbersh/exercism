@@ -6,8 +6,10 @@ var Sieve = function (high) {
 	for (var i=3; i<sieve.length; i+=2) { // odds only
 		if (sieve[i]) {
 			this.primes.push(i);
-			for( var j=Math.pow(i,2);j<sieve.length;j+=i) {
-				sieve[j] = false;
+			for( var j=2;j<sieve.length;j++) {
+				if (i * j < high) { // multiples of i are not prime
+					sieve[i * j] = false;
+				}
 			}
 		}
     }
