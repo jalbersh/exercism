@@ -1,3 +1,5 @@
+
+
 // The Atbash cipher is a simple substitution cipher that relies on
 // transposing all the letters in the alphabet such that the resulting
 // alphabet is backwards. The first letter is replaced with the last
@@ -60,7 +62,7 @@ function backwards_score(score) {
      var backwards='zyxwvutsrqponmlkjihgfedcba'
      return backwards[score];
 }
- 
+
 module.exports = {
     encode: encode
 };

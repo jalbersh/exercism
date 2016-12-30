@@ -22,4 +22,3 @@ module.exports = {
     keep: keep,
     discard: discard
 }
-
