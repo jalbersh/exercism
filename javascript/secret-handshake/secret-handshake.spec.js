@@ -31,12 +31,12 @@ describe('Secret Handshake', function() {
     expect(handshake.commands()).toEqual(['double blink','wink']);
   });
 
-  it('11111 is jump, close your eyes, double blink, and wink', function() {
+  xit('11111 is jump, close your eyes, double blink, and wink', function() {
     var handshake = new SecretHandshake(31);
     expect(handshake.commands()).toEqual(['jump','close your eyes','double blink','wink']);
   });
 
-  it('text is an invalid secret handshake', function() {
+  xit('text is an invalid secret handshake', function() {
     expect( function () {
       var handshake = new SecretHandshake('piggies');
     }).toThrow(new Error('Handshake must be a number'));

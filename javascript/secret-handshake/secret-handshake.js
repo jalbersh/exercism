@@ -1,38 +1,49 @@
-//1 = wink = 1 = power and subscript 0
-//10 = double blink = 2 = 1
-//100 = close your eyes = 4 = 2
-//1000 = jump = 8 = 3
+//1 = wink = 1
+//10 = double blink = 2
+//100 = close your eyes = 4
+//1000 = jump = 8
 
 var SecretHandshake = function (num) {
     this.cmds = [   'wink',
-        'double blink',
-        'close your eyes',
-        'jump']
-    if (!num.toString().match(/(^[0-9])/)) {
-        throw(new Error('Handshake must be a number'))
-    }
+                    'double blink',
+                    'close your eyes',
+                    'jump']
     this.decimal = num
-    this.binary = num.toString(2)
+    console.log('decimal='+this.decimal)
+    this.binary = this.toBinary(num)
+    console.log('binary='+this.binary)
     this.digits =  this.binary.toString().split(/(?=[0-1])/)
-    //console.log(num+' has binary of '+this.binary)
+    console.log('digits='+this.digits)
+
 };
 
-SecretHandshake.prototype.commands = function() {
-    var shake = []
-    var numDigits = this.digits.length
-    for (var place=0;place<numDigits;place++) {
-        var digit = this.digits[place]
-        if (digit == 1) {
-            var sub = numDigits - place - 1
-            var command = this.cmds[sub]
-            if (command) {
-                shake.push(command)
+    SecretHandshake.prototype.toBinary = function(number) {
+        var i = -1;
+        var binary='';
+        var rem = number
+        while (rem > 0) {
+            while (Math.pow(2,i) <= rem) {
+                i++;
             }
+            if (Math.pow(2,i) != rem) {
+                i--;
+            }
+            console.log('i='+i)
+            rem -= Math.pow(2,i);
+            console.log('rem='+rem)
+            binary += '1';
         }
+        while (binary.length < i) {
+            binary += '0'
+        }
+        return binary
     }
-    if (shake.length == 2) {
-        return shake.reverse()
-    }
+
+ SecretHandshake.prototype.commands = function() {
+    var subscript = this.digits.length
+    console.log('sub='+subscript)
+    var shake = []
+    shake.push(this.cmds[subscript])
     return shake
 }
 
