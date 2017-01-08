@@ -6,11 +6,11 @@ describe('Series', function () {
     expect(new Series('0123456789').largestProduct(2)).toBe(72);
   });
 
-  xit('works for a tiny number', function () {
+  it('works for a tiny number', function () {
     expect(new Series('19').largestProduct(2)).toBe(9);
   });
 
-  xit('can get the largest product of 3', function () {
+  it('can get the largest product of 3', function () {
     expect(new Series('1027839564').largestProduct(3)).toBe(270);
   });
 
@@ -27,41 +27,41 @@ describe('Series', function () {
     expect(new Series(largeNumber).largestProduct(13)).toBe(23514624000);
   });
 
-  xit('returns 0 if all digits are zero', function () {
+  it('returns 0 if all digits are zero', function () {
     expect(new Series('0000').largestProduct(2)).toBe(0);
   });
 
-  xit('returns 0 if all spans contain zero', function () {
+  it('returns 0 if all spans contain zero', function () {
     expect(new Series('99099').largestProduct(3)).toBe(0);
   });
 
-  xit('rejects invalid character in input', ()=> {
+  it('rejects invalid character in input', ()=> {
     expect(function () {
       new Series('1234a5').largestProduct('2')
     }).toThrow(new Error('Invalid input.'));
   });
 
-  xit('rejects negative span', function () {
+  it('rejects negative span', function () {
     expect(() => {
       new Series('12345').largestProduct(-1)
     }).toThrow(new Error('Invalid input.'));
   });
 
-  xit('returns 1 for empty string and zero slice length', function () {
+  it('returns 1 for empty string and zero slice length', function () {
     expect(new Series('').largestProduct(0)).toBe(1);
   });
 
-  xit('returns 1 for non-empty string and zero slice length', function () {
+  it('returns 1 for non-empty string and zero slice length', function () {
     expect(new Series('123').largestProduct(0)).toBe(1);
   });
 
-  xit('throws an error for slices bigger than the number', function () {
+  it('throws an error for slices bigger than the number', function () {
     expect(function () {
       new Series('123').largestProduct(4);
     }).toThrow(new Error('Slice size is too big.'));
   });
 
-  xit('throws an error for empty string and non-zero slice length', function () {
+  it('throws an error for empty string and non-zero slice length', function () {
     expect(function () {
       new Series('').largestProduct(1);
     }).toThrow(new Error('Slice size is too big.'));
