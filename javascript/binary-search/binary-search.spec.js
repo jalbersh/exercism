@@ -14,19 +14,19 @@ describe('BinarySearch', function() {
     expect(Array.isArray(validBinarySearch.array)).toEqual(true);
   });
 
-  xit('should find the correct index of an included value in the middle of the array', function() {
+  it('should find the correct index of an included value in the middle of the array', function() {
     expect(new BinarySearch(sortedArray).indexOf(3)).toEqual(2);
   });
 
-  xit('should find the correct index of an included value at the beginning of the array', function() {
+  it('should find the correct index of an included value at the beginning of the array', function() {
     expect(new BinarySearch(sortedArray).indexOf(1)).toEqual(0);
   });
 
-  xit('should find the correct index of an included value at the end of the array', function() {
+  it('should find the correct index of an included value at the end of the array', function() {
     expect(new BinarySearch(sortedArray).indexOf(6)).toEqual(5);
   });
 
-  xit('should search the middle of the array', function() {
+  it('should search the middle of the array', function() {
     expect(new BinarySearch(sortedArrayOfOddLength).indexOf(2)).toEqual(3);
   });
 
