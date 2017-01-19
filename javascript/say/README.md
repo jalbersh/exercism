@@ -1,6 +1,7 @@
 # Say
 
-Write a program that will take a number from 0 to 999,999,999,999 and spell out that number in English.
+Write a program that will take a number from 0 to 999,999,999,999
+and spell out that number in English.
 
 ## Step 1
 
